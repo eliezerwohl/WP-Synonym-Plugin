@@ -1,6 +1,12 @@
-callback=?
+// callback=?
+
+function construct(data){
+
+}
+
 jQuery("#btn").on("click", function(){
- var searchTerm =   window.getSelection().toString()
+    jQuery("#list").empty();
+ var searchTerm =  window.getSelection().toString()
  console.log(searchTerm)
      jQuery.ajax({
         type: "GET", 
@@ -8,6 +14,21 @@ jQuery("#btn").on("click", function(){
         async: true,
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
+            
+            for (var i = 0; i < Object.keys(data).length; i++) {
+                var keyName = Object.keys(data)[i]
+                
+                var array = data[keyName].syn
+                for (var j = 0; j < array.length; j++) {
+                    jQuery("#list").append("<li>" + array[j] + "</li>");
+                }
+                
+
+            }
+            
+            // var array = [data.adjective.syn, data.noun.syn, data.verb.syn]
+            debugger
+         
           
         
         },
