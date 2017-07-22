@@ -1,3 +1,22 @@
+callback=?
+jQuery("#btn").on("click", function(){
+ var searchTerm =   window.getSelection().toString()
+ console.log(searchTerm)
+     jQuery.ajax({
+        type: "GET", 
+        url: "http://words.bighugelabs.com/api/2/d66993493afaf490e7efa84fd5a62427/" + searchTerm +"/json",
+        async: true,
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+          
+        
+        },
+        error: function (errorMessage) {
+            debugger
+        }
+    });
+})
+
 //get selected word, even in iframe
 // window.getSelection().toString()
 

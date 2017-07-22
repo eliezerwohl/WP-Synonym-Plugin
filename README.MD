@@ -6,3 +6,6 @@ original idea comes form this page
 I will make a wordpress plugin that when you highlight a word, it hits a api and returns a dropdown of synonyms. which you can then click on and replace your current word.  
 
 I've decided to write the plugin in JS to start.
+
+
+Thesaurus service provided by words.bighugelabs.com
