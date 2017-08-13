@@ -14,26 +14,25 @@ jQuery("#btn").on("click", function(){
         async: true,
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
-            
             for (var i = 0; i < Object.keys(data).length; i++) {
                 var keyName = Object.keys(data)[i]
                 
                 var array = data[keyName].syn
                 for (var j = 0; j < array.length; j++) {
-                    jQuery("#list").append("<li>" + array[j] + "</li>");
+                    jQuery("#list").append("<li><button onclick='replaceSelectedText(`" + array[j] + "`)'>" + array[j] + "</button></li>");
                 }
                 
 
             }
             
             // var array = [data.adjective.syn, data.noun.syn, data.verb.syn]
-            debugger
+    
          
           
         
         },
         error: function (errorMessage) {
-            debugger
+     
         }
     });
 })
